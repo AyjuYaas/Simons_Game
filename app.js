@@ -12,6 +12,12 @@ $(document).keydown(function () {
     generateSequence();
   }
 });
+$(document).click(function () {
+  if (!isReady) {
+    isReady = true;
+    generateSequence();
+  }
+});
 
 async function generateSequence() {
   await sleep(200);
