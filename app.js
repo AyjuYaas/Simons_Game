@@ -4,6 +4,7 @@ let counter = 0;
 let pattern = [];
 let userPattern = [];
 let isReady = false;
+let finishPattern = false;
 const header = $("h1")[0];
 
 $(document).keydown(function () {
@@ -20,6 +21,7 @@ $(document).click(function () {
 });
 
 async function generateSequence() {
+  finishPattern = false;
   await sleep(200);
   level++;
   userPattern = [];
@@ -34,6 +36,7 @@ async function generateSequence() {
     $(`#${choosenColor}`).fadeIn(150).fadeOut(150).fadeIn(150);
     await sleep(400);
   }
+  finishPattern = true;
   console.log(pattern);
 }
 
@@ -42,21 +45,25 @@ function sleep(ms) {
 }
 
 $(".box").click(function (check) {
-  let userClick = check.currentTarget.classList[1];
-  pressed(userClick);
-  let index = colors.indexOf(userClick);
-  userPattern.push(index);
-  counter++;
-  if (counter === level) {
-    checkAnswer();
+  if (finishPattern) {
+    let userClick = check.currentTarget.classList[1];
+    pressed(userClick);
+    let index = colors.indexOf(userClick);
+    userPattern.push(index);
+    counter++;
+    if (counter === level) {
+      checkAnswer();
+    }
   }
 });
 
 function pressed(userColor) {
-  $(`#${userColor}`).addClass("change");
-  setTimeout(function () {
-    $(`#${userColor}`).removeClass("change");
-  }, 150);
+  if (isReady) {
+    $(`#${userColor}`).addClass("change");
+    setTimeout(function () {
+      $(`#${userColor}`).removeClass("change");
+    }, 150);
+  }
 }
 
 function checkAnswer() {
@@ -80,6 +87,8 @@ function arraysEqual(a, b) {
 
 function gameOver() {
   level = 0;
-  header.innerHTML = "Game Over, Press any key to Start Again!";
-  isReady = false;
+  header.innerHTML = "Game Over, Press Anywhere to Start Again!";
+  setTimeout(function () {
+    isReady = false;
+  }, 500);
 }
