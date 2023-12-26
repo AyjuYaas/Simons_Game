@@ -1,0 +1,55 @@
+body {
+  overflow: hidden;
+  background-color: #023047;
+}
+
+h1,
+p {
+  font-family: "Pixelify Sans", sans-serif;
+  color: #ffb703;
+  width: max-content;
+  margin: auto;
+  padding: 30px;
+  font-size: 3rem;
+}
+
+p {
+  font-size: 20px;
+  margin: 10px auto;
+}
+p:hover {
+  cursor: pointer;
+}
+
+section {
+  width: 450px;
+  margin: auto;
+}
+
+div {
+  height: 10rem;
+  width: 10rem;
+  margin: 20px;
+  background-color: black;
+  display: inline-block;
+  border: 10px solid black;
+  border-radius: 20px;
+}
+
+.green {
+  background-color: green;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.blue {
+  background-color: blue;
+}
+
+.change {
+  border-color: white;
+  transform: scale(1.2);
+}
