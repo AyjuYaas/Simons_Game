@@ -7,11 +7,10 @@ h1,
 p {
   font-family: "Agbalumo", sans-serif;
   color: #ffb703;
-  width: min-content;
+  width: max-content;
   margin: auto;
   padding: 30px;
   font-size: 3rem;
-  text-align: center;
 }
 
 p {
