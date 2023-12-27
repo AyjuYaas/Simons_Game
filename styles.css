@@ -1,34 +1,24 @@
-body {
+* {
   overflow: hidden;
   background-color: #023047;
 }
 
-h1,
-p {
+h1 {
   font-family: "Agbalumo", sans-serif;
   color: #ffb703;
-  width: max-content;
-  margin: auto;
   padding: 30px;
-  font-size: 3rem;
-}
-
-p {
-  font-size: 20px;
-  margin: 10px auto;
-}
-p:hover {
-  cursor: pointer;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 section {
-  width: 450px;
+  width: 350px;
   margin: auto;
 }
 
 div {
-  height: 10rem;
-  width: 10rem;
+  height: 7rem;
+  width: 7rem;
   margin: 20px;
   background-color: black;
   display: inline-block;
